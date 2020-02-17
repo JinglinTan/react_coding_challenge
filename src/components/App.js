@@ -1,14 +1,20 @@
-import "./App.css";
+import "./CSS/App.css";
 import React from "react";
 import UserInput from "./UserInput";
 import BackwardOutput from "./BackwardOutput";
+import AllCapsOutput from "./AllCapsOutput";
 
 class App extends React.Component {
-  state = { input: "", backwardOutput: "" };
+  state = { input: "", backwardOutput: "", allCapsOutput: "" };
 
   onChange = userInput => {
-    let backwards = this.reverseInput(userInput);
-    this.setState({ input: userInput, backwardOutput: backwards });
+    let backwardText = this.reverseInput(userInput);
+    let allCapsText = this.turnAllCaps(userInput);
+    this.setState({
+      input: userInput,
+      backwardOutput: backwardText,
+      allCapsOutput: allCapsText
+    });
   };
 
   reverseInput = userInput => {
@@ -16,6 +22,10 @@ class App extends React.Component {
       .split("")
       .reverse()
       .join("");
+  };
+
+  turnAllCaps = userInput => {
+    return userInput.toUpperCase();
   };
 
   render() {
@@ -26,6 +36,7 @@ class App extends React.Component {
         </div>
         <div className="output">
           <BackwardOutput output={this.state.backwardOutput} />
+          <AllCapsOutput output={this.state.allCapsOutput} />
         </div>
       </div>
     );
