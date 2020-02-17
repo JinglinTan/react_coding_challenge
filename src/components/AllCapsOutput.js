@@ -1,7 +1,7 @@
 import React from "react";
 
 class AllCapsOutput extends React.Component {
-  state = { labelText: "AllCaps: " };
+  state = { labelText: "All caps: " };
 
   render() {
     return (

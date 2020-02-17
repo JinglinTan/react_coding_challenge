@@ -1,17 +1,28 @@
+/* App */
+
 .input {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 10%;
+  left: 3%;
 }
 
 .output {
   position: absolute;
-  top: 20px;
-  left: 500px;
-  width: 600px;
+  top: 10%;
+  left: 40%;
+  width: 40%;
   word-wrap: break-word;
 }
 
+/* UserInput */
+
 .input_bar {
   width: 300px;
+}
+
+/* LargerFontOutput */
+
+.larger-font-p {
+  font-size: 200%;
+  margin: 16px 0;
 }

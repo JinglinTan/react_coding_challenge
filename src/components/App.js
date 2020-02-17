@@ -3,6 +3,7 @@ import React from "react";
 import UserInput from "./UserInput";
 import BackwardOutput from "./BackwardOutput";
 import AllCapsOutput from "./AllCapsOutput";
+import LargerFontOutput from "./LargerFontOutput";
 
 class App extends React.Component {
   state = { input: "", backwardOutput: "", allCapsOutput: "" };
@@ -36,7 +37,11 @@ class App extends React.Component {
         </div>
         <div className="output">
           <BackwardOutput output={this.state.backwardOutput} />
+          <hr></hr>
           <AllCapsOutput output={this.state.allCapsOutput} />
+          <hr></hr>
+          <LargerFontOutput output={this.state.input} />
+          <hr></hr>
         </div>
       </div>
     );
