@@ -1,18 +1,32 @@
+import "./App.css";
 import React from "react";
 import UserInput from "./UserInput";
+import BackwardOutput from "./BackwardOutput";
 
 class App extends React.Component {
-  state = { input: "" };
+  state = { input: "", backwardOutput: "" };
 
   onChange = userInput => {
-    this.setState({ input: userInput });
-    console.log(this.state.input);
+    let backwards = this.reverseInput(userInput);
+    this.setState({ input: userInput, backwardOutput: backwards });
+  };
+
+  reverseInput = userInput => {
+    return userInput
+      .split("")
+      .reverse()
+      .join("");
   };
 
   render() {
     return (
-      <div className="App">
-        <UserInput passInputToApp={this.onChange} />
+      <div className="app">
+        <div className="input">
+          <UserInput passInputToApp={this.onChange} />
+        </div>
+        <div className="output">
+          <BackwardOutput output={this.state.backwardOutput} />
+        </div>
       </div>
     );
   }

@@ -1,0 +1,17 @@
+.input {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.output {
+  position: absolute;
+  top: 20px;
+  left: 500px;
+  width: 600px;
+  word-wrap: break-word;
+}
+
+.input_bar {
+  width: 300px;
+}
